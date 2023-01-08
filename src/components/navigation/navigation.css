@@ -1,0 +1,22 @@
+.navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 75px;
+    color: #333;
+    background-color: #fff;
+}
+
+.nav-link {
+    font-weight: 700;
+    color: #333;
+    margin: 0 10px;
+}
+
+.nav-search {
+    vertical-align: middle;
+    color: #333;
+    font-weight: 700;
+}

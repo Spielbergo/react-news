@@ -1,0 +1,24 @@
+.sidebar__container {
+    padding: 50px 0 15px;
+}
+
+.sidebar__container .social-icons {
+    padding: 0;
+}
+
+.sidebar__popular {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar__popular div  {
+    display: flex;
+    justify-content: center; 
+    margin-bottom: 25px;  
+}
+
+.sidebar__popular-item {
+    flex-direction: column;
+    margin-left: 25px; 
+}

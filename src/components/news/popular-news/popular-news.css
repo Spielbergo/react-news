@@ -1,0 +1,31 @@
+.popular-news__container {
+    /* background-color: #fff;
+    color: #333; */
+    padding: 75px 0;
+}
+
+.popular-news__text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.popular-news__cards {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1150px;
+    margin: auto;
+    padding-bottom: 75px;
+}
+
+.popular-news__card {
+    max-width: 350px;
+}
+
+.popular-news__date-cat {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
