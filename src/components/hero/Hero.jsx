@@ -4,7 +4,7 @@ import Flickity from 'react-flickity-component'
 import './flickity.css'
 
 const flickityOptions = {
-    initialIndex: 2
+    initialIndex: 0
 }
 
 function Hero() {
@@ -18,9 +18,9 @@ function Hero() {
       static // default false
     >
     
-      <img src="https://via.placeholder.com/1920x720.png?text=SLIDE-1"/>
-      <img src="https://via.placeholder.com/1920x720.png?text=SLIDE-2"/>
-      <img src="https://via.placeholder.com/1920x720.png?text=SLIDE-3"/>
+      <img className="flickity-hero-img" src="https://foxsports.static.areyouwatchingthis.com/images/assets/2092676.jpg" width='1920' height='720' />
+      <img className="flickity-hero-img" src="https://static.clubs.nfl.com/image/private/t_editorial_landscape_8_desktop_mobile/f_png/bills/wvp7lnulowjut3kqdv4l.png" width='1920' height='720' />
+      <img className="flickity-hero-img" src="https://i.ytimg.com/vi/6PcPB1ll2Xo/maxresdefault.jpg"  width='1920' height='720' />
     </Flickity>
   )
 }

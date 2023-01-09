@@ -22,6 +22,17 @@
 
 .popular-news__card {
     max-width: 350px;
+    max-height: 350px;
+}
+
+.popular-news__card a {
+    color: #fff;
+}
+
+.popular-news__card img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
 }
 
 .popular-news__date-cat {

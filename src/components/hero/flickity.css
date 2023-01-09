@@ -1,6 +1,9 @@
 /*! Flickity v2.1.2
 https://flickity.metafizzy.co
 ---------------------------------------------- */
+.flickity-hero-img {
+  object-fit: cover;
+}
 
 .flickity-enabled {
     position: relative;

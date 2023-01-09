@@ -1,43 +1,66 @@
 import React from 'react';
+import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
+
+const queryClient = new QueryClient();
 
 const WorldNewsWideCards = () => {
-  return (
-    <div>
-        <div className="world-news-wide__cards">
-            <div>
-                <img src="https://via.placeholder.com/300x250.png?text=sidebar-1"/>
-                <div className="world-news-wide__cards-item">
-                    <h3>This gun is advertised as the most popular gun in American crime</h3>
-                    <p>Sitting on a working-class comme  dows of an easy above-ground rail line, a group cal led Make the Road New York's busy street-level offices are easy to miss. But its mission to supportm</p>
-                </div>
-            </div>
+    return (
+      <QueryClientProvider client={queryClient}>
+          <GetWorldNewsWideCards />
+      </QueryClientProvider>
+    );
+  };
 
-            <div>
-                <img src="https://via.placeholder.com/300x250.png?text=sidebar-1"/>
-                <div className="world-news-wide__cards-item">
-                    <h3>This gun is advertised as the most popular gun in American crime</h3>
-                    <p>Sitting on a working-class comme  dows of an easy above-ground rail line, a group cal led Make the Road New York's busy street-level offices are easy to miss. But its mission to supportm</p>
-                </div>
-            </div>
+const GetWorldNewsWideCards = () => {
+    const { isLoading, error, data } = useQuery('repoData', () =>
+    fetch('https://api.thenewsapi.com/v1/news/all?api_token=AkjNQvEVkTa2ZOYNIVz9wZdethZ6UuD6h8f1IgXe&categories=health&locale=us,ca&language=en&limit=4').then(res =>
+    res.json()
+        )
+    )
+    
+    if (isLoading) return 'Loading...'
+    
+    if (error) return 'An error has occurred: ' + error.message
+    // console.log(data.data[0]) 
 
-            <div>
-                <img src="https://via.placeholder.com/300x250.png?text=sidebar-1"/>
-                <div className="world-news-wide__cards-item">
-                    <h3>This gun is advertised as the most popular gun in American crime</h3>
-                    <p>Sitting on a working-class comme  dows of an easy above-ground rail line, a group cal led Make the Road New York's busy street-level offices are easy to miss. But its mission to supportm</p>
+    return (
+        <div>
+            <div className="world-news-wide__cards">
+            <h2>Health and Wellness</h2>
+                <div>
+                    <img src={data.data[0].image_url}/>
+                    <div className="world-news-wide__cards-item">
+                        <h3>{data.data[0].title}</h3>
+                        <p>{data.data[0].description}</p>
+                    </div>
                 </div>
-            </div>
 
-            <div>
-                <img src="https://via.placeholder.com/300x250.png?text=sidebar-1"/>
-                <div className="world-news-wide__cards-item">
-                <h3>This gun is advertised as the most popular gun in American crime</h3>
-                <p>Sitting on a working-class comme  dows of an easy above-ground rail line, a group cal led Make the Road New York's busy street-level offices are easy to miss. But its mission to supportm</p>
+                <div>
+                    <img src={data.data[1].image_url}/>
+                    <div className="world-news-wide__cards-item">
+                        <h3>{data.data[1].title}</h3>
+                        <p>{data.data[1].description}</p>
+                    </div>
+                </div>
+
+                <div>
+                    <img src={data.data[2].image_url}/>
+                    <div className="world-news-wide__cards-item">
+                        <h3>{data.data[2].title}</h3>
+                        <p>{data.data[2].description}</p>
+                    </div>
+                </div>
+
+                <div>
+                    <img src={data.data[3].image_url}/>
+                    <div className="world-news-wide__cards-item">
+                    <h3>{data.data[3].title}</h3>
+                    <p>{data.data[3].description}</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-  )
+    )
 }
 
 export default WorldNewsWideCards;

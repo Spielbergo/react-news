@@ -26,7 +26,7 @@ function App() {
       <section>
         <PopularNews />
       </section>
-      <section>
+      <section className="bg-gradient-grey">
         <NewsDivider />
       </section>
       <section className="world-news-section">
